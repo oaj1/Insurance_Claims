@@ -8,6 +8,16 @@ Insurance_Claims_Load_Cleaning
 
 Insurance_Claims_EDA
     *We will do some Python EDA, in addition to Tableau visualization
+    *Python:
+        *Descriptive stats (df.describe())
+        *Fraud vs non-fraud frequency
+        *Distributions of key variables (premium, deductible, capital gains/loss)
+        *Correlations heatmap
+        *Outliers (boxplots for numerical features)
+
+    *Tableau
+        *Highlight 4–5 of the most interesting relationships you found in Python.
+        *Build dashboards that visually explain fraud risk factors.
 
     *****NOTE***** is this the stage where I would want to do more tableau than Python????
 
