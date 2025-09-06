@@ -14,7 +14,8 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 - Apply data cleaning techniques:
   - Handle missing values
   - Remove/adjust outliers
-  - Encode categorical fields (as needed)
+  - Look at skewed data, decide next steps for analysis (look for heavy right or left tails)
+  - Drop any unecessary data
   - Save a clean dataset (`clean_fraud.csv`).
 
 ---
@@ -33,32 +34,26 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 - Multivariate analysis (correlation heatmaps, feature interactions).
 
 ### 🔹 Tableau
-- Highlight **4–5 of the most interesting relationships** discovered in Python.
+- As data cleaning and visualization occurs, dynamically create intuitative visualizations.
 - Build interactive dashboards to visually explain fraud risk factors.
 - Use Tableau for communicating findings to non-technical stakeholders.
 
-**Note:** This is the stage where you may lean more on **Tableau for storytelling**,  
-while Python remains your deeper statistical/technical exploration tool.  
+**Note:** I will use Tableau for visualization and story telling, Python for more advanced statistics and analysis.  
 
 ---
 
 ## 3. Insurance_Claims_MachineLearning
 **Scope:**
 - Use cleaned dataset from EDA.
-- Feature engineering:
-  - Ratios (e.g., claim amount ÷ premium).
-  - Encodings (categorical → numeric).
-  - Scaling if required.
+- Feature engineering:.
 - Model development:
-  - Baseline: Logistic Regression.
-  - Advanced: Decision Tree, Random Forest, XGBoost.
 - Model evaluation:
-  - Confusion matrix, ROC, Precision/Recall, F1-score.
+  - i.e., Confusion matrix, ROC, Precision/Recall, F1-score.
 - Goal: Predict likelihood of fraud with interpretable and accurate models.
 
 ---
 
-## ✅ Next Steps
+## ✅ Note
 - Keep EDA modular (separate notebooks for demographics, claims, financials, etc.).
 - Maintain a central README (this file) as a project roadmap and log of key findings.
 - Iteratively update Tableau dashboards as new patterns emerge.
