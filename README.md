@@ -1,4 +1,4 @@
-# Insurance_Claims
+# Insurance_Claims (in progress)
 
 This project explores an insurance claims dataset to identify patterns of fraud through  
 data cleaning, exploratory analysis (Python + Tableau), and machine learning models.  
