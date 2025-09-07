@@ -1,0 +1,1873 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.25.0114.1153                               -->
+<workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='InsuranceClaimsFraud' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='insurance_claims_cleaned_fixed' inline='true' name='federated.0awbdcc1pvqa7914git850g9n4b1' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='insurance_claims_cleaned_fixed' name='textscan.18h2c9m03ci11w1bntsvm00rcs84'>
+            <connection class='textscan' directory='C:/Users/ollie/OneDrive/Desktop/Data Analyst/Insurance_Claims' filename='insurance_claims_cleaned_fixed.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.18h2c9m03ci11w1bntsvm00rcs84' name='insurance_claims_cleaned_fixed.csv' table='[insurance_claims_cleaned_fixed#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='months_as_customer' ordinal='0' />
+            <column datatype='integer' name='age' ordinal='1' />
+            <column datatype='integer' name='policy_number' ordinal='2' />
+            <column datatype='date' name='policy_bind_date' ordinal='3' />
+            <column datatype='string' name='policy_state' ordinal='4' />
+            <column datatype='integer' name='policy_deductable' ordinal='5' />
+            <column datatype='real' name='policy_annual_premium' ordinal='6' />
+            <column datatype='real' name='umbrella_limit' ordinal='7' />
+            <column datatype='integer' name='insured_zip' ordinal='8' />
+            <column datatype='string' name='insured_sex' ordinal='9' />
+            <column datatype='string' name='insured_education_level' ordinal='10' />
+            <column datatype='string' name='insured_occupation' ordinal='11' />
+            <column datatype='string' name='insured_hobbies' ordinal='12' />
+            <column datatype='string' name='insured_relationship' ordinal='13' />
+            <column datatype='integer' name='capital_gains' ordinal='14' />
+            <column datatype='integer' name='capital_loss' ordinal='15' />
+            <column datatype='string' name='incident_type' ordinal='16' />
+            <column datatype='string' name='collision_type' ordinal='17' />
+            <column datatype='string' name='incident_severity' ordinal='18' />
+            <column datatype='string' name='authorities_contacted' ordinal='19' />
+            <column datatype='string' name='incident_state' ordinal='20' />
+            <column datatype='string' name='incident_city' ordinal='21' />
+            <column datatype='string' name='incident_location' ordinal='22' />
+            <column datatype='integer' name='incident_hour_of_the_day' ordinal='23' />
+            <column datatype='integer' name='number_of_vehicles_involved' ordinal='24' />
+            <column datatype='string' name='property_damage' ordinal='25' />
+            <column datatype='integer' name='bodily_injuries' ordinal='26' />
+            <column datatype='integer' name='witnesses' ordinal='27' />
+            <column datatype='string' name='police_report_available' ordinal='28' />
+            <column datatype='integer' name='total_claim_amount' ordinal='29' />
+            <column datatype='integer' name='injury_claim' ordinal='30' />
+            <column datatype='integer' name='property_claim' ordinal='31' />
+            <column datatype='integer' name='vehicle_claim' ordinal='32' />
+            <column datatype='string' name='auto_make' ordinal='33' />
+            <column datatype='string' name='auto_model' ordinal='34' />
+            <column datatype='integer' name='auto_year' ordinal='35' />
+            <column datatype='string' name='fraud_reported' ordinal='36' />
+            <column datatype='integer' name='policy_csl_person' ordinal='37' />
+            <column datatype='integer' name='policy_csl_accident' ordinal='38' />
+            <column datatype='integer' name='incident_year' ordinal='39' />
+            <column datatype='integer' name='incident_month' ordinal='40' />
+            <column datatype='integer' name='incident_day' ordinal='41' />
+            <column datatype='integer' name='incident_dayofweek' ordinal='42' />
+            <column datatype='integer' name='calculated_total_claim' ordinal='43' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>months_as_customer</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[months_as_customer]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>months_as_customer</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[policy_number]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_number</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_bind_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[policy_bind_date]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_bind_date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[policy_state]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_state</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_deductable</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[policy_deductable]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_deductable</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_annual_premium</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[policy_annual_premium]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_annual_premium</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>umbrella_limit</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[umbrella_limit]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>umbrella_limit</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>insured_zip</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[insured_zip]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>insured_zip</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>insured_sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[insured_sex]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>insured_sex</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>insured_education_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[insured_education_level]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>insured_education_level</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>insured_occupation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[insured_occupation]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>insured_occupation</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>insured_hobbies</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[insured_hobbies]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>insured_hobbies</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>insured_relationship</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[insured_relationship]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>insured_relationship</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>capital_gains</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[capital_gains]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>capital_gains</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>capital_loss</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[capital_loss]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>capital_loss</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incident_type]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_type</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>collision_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[collision_type]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>collision_type</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_severity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incident_severity]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_severity</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>authorities_contacted</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[authorities_contacted]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>authorities_contacted</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incident_state]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_state</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incident_city]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_city</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incident_location]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_location</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_hour_of_the_day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incident_hour_of_the_day]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_hour_of_the_day</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_vehicles_involved</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number_of_vehicles_involved]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>number_of_vehicles_involved</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>property_damage</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[property_damage]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>property_damage</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bodily_injuries</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bodily_injuries]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>bodily_injuries</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>witnesses</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[witnesses]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>witnesses</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>police_report_available</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[police_report_available]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>police_report_available</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_claim_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_claim_amount]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>total_claim_amount</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>injury_claim</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[injury_claim]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>injury_claim</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>property_claim</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[property_claim]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>property_claim</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vehicle_claim</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[vehicle_claim]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>vehicle_claim</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>auto_make</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[auto_make]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>auto_make</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>auto_model</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[auto_model]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>auto_model</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>auto_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[auto_year]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>auto_year</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fraud_reported</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[fraud_reported]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>fraud_reported</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_csl_person</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[policy_csl_person]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_csl_person</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>policy_csl_accident</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[policy_csl_accident]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>policy_csl_accident</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incident_year]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_year</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incident_month]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_month</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incident_day]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_day</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_dayofweek</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incident_dayofweek]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>incident_dayofweek</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calculated_total_claim</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[calculated_total_claim]</local-name>
+            <parent-name>[insurance_claims_cleaned_fixed.csv]</parent-name>
+            <remote-alias>calculated_total_claim</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='insurance_claims_cleaned_fixed.csv' datatype='table' name='[__tableau_internal_object_id__].[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='Authorities Contacted' datatype='string' name='[authorities_contacted]' role='dimension' type='nominal' />
+      <column caption='Auto Make' datatype='string' name='[auto_make]' role='dimension' type='nominal' />
+      <column caption='Auto Model' datatype='string' name='[auto_model]' role='dimension' type='nominal' />
+      <column caption='Auto Year' datatype='integer' name='[auto_year]' role='dimension' type='quantitative' />
+      <column caption='Bodily Injuries' datatype='integer' name='[bodily_injuries]' role='measure' type='quantitative' />
+      <column caption='Calculated Total Claim' datatype='integer' name='[calculated_total_claim]' role='measure' type='quantitative' />
+      <column caption='Capital Gains' datatype='integer' name='[capital_gains]' role='measure' type='quantitative' />
+      <column caption='Capital Loss' datatype='integer' name='[capital_loss]' role='measure' type='quantitative' />
+      <column caption='Collision Type' datatype='string' name='[collision_type]' role='dimension' type='nominal' />
+      <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+      <column caption='Incident City' datatype='string' name='[incident_city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Incident Day' datatype='integer' name='[incident_day]' role='dimension' type='quantitative' />
+      <column caption='Incident Dayofweek (0 = Monday, 6 =Sunday)' datatype='integer' name='[incident_dayofweek]' role='measure' type='quantitative' />
+      <column caption='Incident Hour Of The Day' datatype='integer' name='[incident_hour_of_the_day]' role='dimension' type='quantitative' />
+      <column caption='Incident Location' datatype='string' name='[incident_location]' role='dimension' type='nominal' />
+      <column caption='Incident Month' datatype='integer' name='[incident_month]' role='dimension' type='quantitative' />
+      <column caption='Incident Severity' datatype='string' name='[incident_severity]' role='dimension' type='nominal' />
+      <column caption='Incident State' datatype='string' name='[incident_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Incident Type' datatype='string' name='[incident_type]' role='dimension' type='nominal' />
+      <column caption='Incident Year' datatype='integer' name='[incident_year]' role='dimension' type='quantitative' />
+      <column caption='Injury Claim' datatype='integer' name='[injury_claim]' role='measure' type='quantitative' />
+      <column caption='Insured Education Level' datatype='string' name='[insured_education_level]' role='dimension' type='nominal' />
+      <column caption='Insured Hobbies' datatype='string' name='[insured_hobbies]' role='dimension' type='nominal' />
+      <column caption='Insured Occupation' datatype='string' name='[insured_occupation]' role='dimension' type='nominal' />
+      <column caption='Insured Relationship' datatype='string' name='[insured_relationship]' role='dimension' type='nominal' />
+      <column caption='Insured Sex' datatype='string' name='[insured_sex]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Insured Zip' datatype='integer' default-format='*00000' name='[insured_zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column caption='Months As Customer' datatype='integer' name='[months_as_customer]' role='measure' type='quantitative' />
+      <column caption='Number Of Vehicles Involved' datatype='integer' name='[number_of_vehicles_involved]' role='measure' type='quantitative' />
+      <column caption='Police Report Available' datatype='string' name='[police_report_available]' role='dimension' type='nominal' />
+      <column caption='Policy Annual Premium' datatype='real' name='[policy_annual_premium]' role='measure' type='quantitative' />
+      <column caption='Policy Bind Date' datatype='date' name='[policy_bind_date]' role='dimension' type='ordinal' />
+      <column caption='Policy Csl Accident' datatype='integer' name='[policy_csl_accident]' role='measure' type='quantitative' />
+      <column caption='Policy Csl Person' datatype='integer' name='[policy_csl_person]' role='measure' type='quantitative' />
+      <column caption='Policy Deductable' datatype='integer' name='[policy_deductable]' role='measure' type='quantitative' />
+      <column caption='Policy Number' datatype='integer' name='[policy_number]' role='dimension' type='ordinal' />
+      <column caption='Policy State' datatype='string' name='[policy_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Property Claim' datatype='integer' name='[property_claim]' role='measure' type='quantitative' />
+      <column caption='Property Damage' datatype='string' name='[property_damage]' role='dimension' type='nominal' />
+      <column caption='Total Claim Amount' datatype='integer' name='[total_claim_amount]' role='measure' type='quantitative' />
+      <column caption='Umbrella Limit' datatype='real' name='[umbrella_limit]' role='measure' type='quantitative' />
+      <column caption='Vehicle Claim' datatype='integer' name='[vehicle_claim]' role='measure' type='quantitative' />
+      <column caption='Witnesses' datatype='integer' name='[witnesses]' role='measure' type='quantitative' />
+      <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/ollie/AppData/Local/Temp/TableauTemp/#TableauTemp_06y4mly0m9vm8j1dmvmox1e0mhak.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='09/07/2025 02:23:11 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>months_as_customer</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[months_as_customer]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>months_as_customer</remote-alias>
+              <ordinal>0</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>391</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>1</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[policy_number]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_number</remote-alias>
+              <ordinal>2</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_bind_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[policy_bind_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_bind_date</remote-alias>
+              <ordinal>3</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>951</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[policy_state]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_state</remote-alias>
+              <ordinal>4</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_deductable</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[policy_deductable]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_deductable</remote-alias>
+              <ordinal>5</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_annual_premium</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[policy_annual_premium]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_annual_premium</remote-alias>
+              <ordinal>6</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>991</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>umbrella_limit</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[umbrella_limit]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>umbrella_limit</remote-alias>
+              <ordinal>7</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>insured_zip</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[insured_zip]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>insured_zip</remote-alias>
+              <ordinal>8</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>995</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>insured_sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[insured_sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>insured_sex</remote-alias>
+              <ordinal>9</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>insured_education_level</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[insured_education_level]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>insured_education_level</remote-alias>
+              <ordinal>10</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>insured_occupation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[insured_occupation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>insured_occupation</remote-alias>
+              <ordinal>11</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>insured_hobbies</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[insured_hobbies]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>insured_hobbies</remote-alias>
+              <ordinal>12</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>insured_relationship</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[insured_relationship]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>insured_relationship</remote-alias>
+              <ordinal>13</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>capital_gains</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[capital_gains]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>capital_gains</remote-alias>
+              <ordinal>14</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>338</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>capital_loss</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[capital_loss]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>capital_loss</remote-alias>
+              <ordinal>15</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>354</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[incident_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_type</remote-alias>
+              <ordinal>16</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>collision_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[collision_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>collision_type</remote-alias>
+              <ordinal>17</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_severity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[incident_severity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_severity</remote-alias>
+              <ordinal>18</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>authorities_contacted</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[authorities_contacted]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>authorities_contacted</remote-alias>
+              <ordinal>19</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[incident_state]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_state</remote-alias>
+              <ordinal>20</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[incident_city]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_city</remote-alias>
+              <ordinal>21</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_location</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[incident_location]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_location</remote-alias>
+              <ordinal>22</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_hour_of_the_day</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[incident_hour_of_the_day]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_hour_of_the_day</remote-alias>
+              <ordinal>23</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>number_of_vehicles_involved</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[number_of_vehicles_involved]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>number_of_vehicles_involved</remote-alias>
+              <ordinal>24</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>property_damage</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[property_damage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>property_damage</remote-alias>
+              <ordinal>25</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>bodily_injuries</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[bodily_injuries]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>bodily_injuries</remote-alias>
+              <ordinal>26</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>witnesses</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[witnesses]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>witnesses</remote-alias>
+              <ordinal>27</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>police_report_available</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[police_report_available]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>police_report_available</remote-alias>
+              <ordinal>28</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_claim_amount</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_claim_amount]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_claim_amount</remote-alias>
+              <ordinal>29</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>763</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>injury_claim</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[injury_claim]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>injury_claim</remote-alias>
+              <ordinal>30</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>638</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>property_claim</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[property_claim]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>property_claim</remote-alias>
+              <ordinal>31</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>626</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>vehicle_claim</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[vehicle_claim]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>vehicle_claim</remote-alias>
+              <ordinal>32</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>726</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>auto_make</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[auto_make]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>auto_make</remote-alias>
+              <ordinal>33</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>auto_model</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[auto_model]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>auto_model</remote-alias>
+              <ordinal>34</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>39</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>auto_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[auto_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>auto_year</remote-alias>
+              <ordinal>35</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fraud_reported</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[fraud_reported]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>fraud_reported</remote-alias>
+              <ordinal>36</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_csl_person</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[policy_csl_person]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_csl_person</remote-alias>
+              <ordinal>37</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>policy_csl_accident</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[policy_csl_accident]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>policy_csl_accident</remote-alias>
+              <ordinal>38</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[incident_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_year</remote-alias>
+              <ordinal>39</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[incident_month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_month</remote-alias>
+              <ordinal>40</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_day</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[incident_day]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_day</remote-alias>
+              <ordinal>41</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>incident_dayofweek</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[incident_dayofweek]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>incident_dayofweek</remote-alias>
+              <ordinal>42</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>calculated_total_claim</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[calculated_total_claim]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>calculated_total_claim</remote-alias>
+              <ordinal>43</ordinal>
+              <family>insurance_claims_cleaned_fixed.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>763</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:fraud_reported:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;No&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>%all%</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Yes&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Vanuatu&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='insurance_claims_cleaned_fixed.csv' id='insurance_claims_cleaned_fixed.csv_3DAAD9EB7EE7438BBD5581AA2B1F31F2'>
+            <properties context=''>
+              <relation connection='textscan.18h2c9m03ci11w1bntsvm00rcs84' name='insurance_claims_cleaned_fixed.csv' table='[insurance_claims_cleaned_fixed#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='months_as_customer' ordinal='0' />
+                  <column datatype='integer' name='age' ordinal='1' />
+                  <column datatype='integer' name='policy_number' ordinal='2' />
+                  <column datatype='date' name='policy_bind_date' ordinal='3' />
+                  <column datatype='string' name='policy_state' ordinal='4' />
+                  <column datatype='integer' name='policy_deductable' ordinal='5' />
+                  <column datatype='real' name='policy_annual_premium' ordinal='6' />
+                  <column datatype='real' name='umbrella_limit' ordinal='7' />
+                  <column datatype='integer' name='insured_zip' ordinal='8' />
+                  <column datatype='string' name='insured_sex' ordinal='9' />
+                  <column datatype='string' name='insured_education_level' ordinal='10' />
+                  <column datatype='string' name='insured_occupation' ordinal='11' />
+                  <column datatype='string' name='insured_hobbies' ordinal='12' />
+                  <column datatype='string' name='insured_relationship' ordinal='13' />
+                  <column datatype='integer' name='capital_gains' ordinal='14' />
+                  <column datatype='integer' name='capital_loss' ordinal='15' />
+                  <column datatype='string' name='incident_type' ordinal='16' />
+                  <column datatype='string' name='collision_type' ordinal='17' />
+                  <column datatype='string' name='incident_severity' ordinal='18' />
+                  <column datatype='string' name='authorities_contacted' ordinal='19' />
+                  <column datatype='string' name='incident_state' ordinal='20' />
+                  <column datatype='string' name='incident_city' ordinal='21' />
+                  <column datatype='string' name='incident_location' ordinal='22' />
+                  <column datatype='integer' name='incident_hour_of_the_day' ordinal='23' />
+                  <column datatype='integer' name='number_of_vehicles_involved' ordinal='24' />
+                  <column datatype='string' name='property_damage' ordinal='25' />
+                  <column datatype='integer' name='bodily_injuries' ordinal='26' />
+                  <column datatype='integer' name='witnesses' ordinal='27' />
+                  <column datatype='string' name='police_report_available' ordinal='28' />
+                  <column datatype='integer' name='total_claim_amount' ordinal='29' />
+                  <column datatype='integer' name='injury_claim' ordinal='30' />
+                  <column datatype='integer' name='property_claim' ordinal='31' />
+                  <column datatype='integer' name='vehicle_claim' ordinal='32' />
+                  <column datatype='string' name='auto_make' ordinal='33' />
+                  <column datatype='string' name='auto_model' ordinal='34' />
+                  <column datatype='integer' name='auto_year' ordinal='35' />
+                  <column datatype='string' name='fraud_reported' ordinal='36' />
+                  <column datatype='integer' name='policy_csl_person' ordinal='37' />
+                  <column datatype='integer' name='policy_csl_accident' ordinal='38' />
+                  <column datatype='integer' name='incident_year' ordinal='39' />
+                  <column datatype='integer' name='incident_month' ordinal='40' />
+                  <column datatype='integer' name='incident_day' ordinal='41' />
+                  <column datatype='integer' name='incident_dayofweek' ordinal='42' />
+                  <column datatype='integer' name='calculated_total_claim' ordinal='43' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Fraud vs Non-Fraud'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Fraud vs No-Fraud Reported</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='insurance_claims_cleaned_fixed' name='federated.0awbdcc1pvqa7914git850g9n4b1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0awbdcc1pvqa7914git850g9n4b1'>
+            <column-instance column='[policy_number]' derivation='Count' name='[cnt:policy_number:qk]' pivot='key' type='quantitative' />
+            <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+            <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+            <column caption='Policy Number' datatype='integer' name='[policy_number]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]'>
+            <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:policy_number:qk]&quot;' user:op='manual' />
+          </filter>
+          <slices>
+            <column>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows total='true'>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{0677D7AC-CC65-4CF2-BEDE-4E2C1308A3AE}' />
+    </worksheet>
+    <worksheet name='Fraud vs Non-Fraud Continued'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Fraud vs No-Fraud Reported</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='insurance_claims_cleaned_fixed' name='federated.0awbdcc1pvqa7914git850g9n4b1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0awbdcc1pvqa7914git850g9n4b1'>
+            <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+            <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+            <column-instance column='[policy_number]' derivation='Count' name='[pcto:cnt:policy_number:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[policy_number]' derivation='CountD' name='[pcto:ctd:policy_number:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='Policy Number' datatype='integer' name='[policy_number]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:ctd:policy_number:qk]' value='20' />
+            <format attr='font-weight' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:ctd:policy_number:qk]' value='bold' />
+            <format attr='color' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:ctd:policy_number:qk]' value='#000000' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' value='#ffffff' />
+            <format attr='font-size' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' value='18' />
+            <format attr='color' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' value='#000000' />
+            <format attr='font-weight' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' value='bold' />
+            <format attr='font-style' data-class='subtotal' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' value='italic' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' />
+              <wedge-size column='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:policy_number:qk:3]' />
+              <size column='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:policy_number:qk:3]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:ctd:policy_number:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:ctd:policy_number:qk]</run>
+                <run>&gt;&#10;&lt;</run>
+                <run>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='user' />
+                <format attr='font-weight' value='normal' />
+                <format attr='color' value='#000000' />
+                <format attr='font-size' value='12' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='2.022099494934082' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F349DEE8-0EF0-4995-985F-F93B07A8A0B8}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Fraud vs Non-Fraud'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:policy_number:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1F5C8AE0-7BFE-463A-8086-2D0B364E23EF}' />
+    </window>
+    <window class='worksheet' name='Fraud vs Non-Fraud Continued'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:policy_number:qk:3]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:policy_number:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3B31EF40-3F44-4FFF-BDF8-525DCF79EC67}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='87' name='Fraud vs Non-Fraud' width='164'>
+      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
+      NwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='164' name='Fraud vs Non-Fraud Continued' width='164'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
