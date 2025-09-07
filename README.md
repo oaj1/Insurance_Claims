@@ -16,7 +16,7 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
   - Remove/adjust outliers
   - Look at skewed data, decide next steps for analysis (look for heavy right or left tails)
   - Drop any unecessary data
-  - Save a clean dataset (`clean_fraud.csv`).
+  - Save a clean dataset (`insurance_claims_cleaned_fixed.csv`).
 
 ---
 
