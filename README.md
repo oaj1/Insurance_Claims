@@ -9,7 +9,7 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 
 ## 1. Insurance_Claims_Load_Cleaning
 **Scope:**
-- Load the initial CSV dataset.
+- Load the initial CSV dataset. ('Insurance_Claims_Load_Clean.ipynb')
 - Inspect data types, missing values, and distributions.
 - Apply data cleaning techniques:
   - Handle missing values
@@ -26,11 +26,11 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 
 ### 🔹 Python
 - Summary statistics and fraud distribution.
-- Visualizations:
+- EDA and Visualizations:
   - Fraud vs. non-fraud distributions (boxplots, histograms).
-  - Claim comparisons (`vehicle_claim`, `injury_claim`, `property_claim`, `total_claim_amount`).
-  - Demographic and financial factors (`age`, `months_as_customer`, `capital-gains/loss`).
-  - Categorical features (`incident_type`, `collision_type`, `incident_severity`).
+  - Incident Type EDA.
+  - Demographic and financial EDA.
+  - Claim Type.
 - Multivariate analysis (correlation heatmaps, feature interactions).
 
 ### 🔹 Tableau
