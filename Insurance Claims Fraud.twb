@@ -4,12 +4,14 @@
 <workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <AnimationOnByDefault />
+    <Heatmap />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
     <ObjectModelExtractV2 />
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
     <SheetIdentifierTracking />
+    <SortTagCleanup />
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
@@ -723,7 +725,7 @@
       <column caption='Witnesses' datatype='integer' name='[witnesses]' role='measure' type='quantitative' />
       <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/ollie/AppData/Local/Temp/TableauTemp/#TableauTemp_06y4mly0m9vm8j1dmvmox1e0mhak.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='09/07/2025 02:23:11 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/ollie/AppData/Local/Temp/TableauTemp/#TableauTemp_0ff1x210tj12y116wet7l0nxpecq.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='09/12/2025 02:58:23 PM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -1578,9 +1580,244 @@
       </table>
       <simple-id uuid='{F349DEE8-0EF0-4995-985F-F93B07A8A0B8}' />
     </worksheet>
+    <worksheet name='Injury Claims and Fraud'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='insurance_claims_cleaned_fixed' name='federated.0awbdcc1pvqa7914git850g9n4b1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0awbdcc1pvqa7914git850g9n4b1'>
+            <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+            <column caption='Injury Claim' datatype='integer' name='[injury_claim]' role='measure' type='quantitative' />
+            <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+            <column-instance column='[injury_claim]' derivation='None' name='[none:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[injury_claim]' derivation='Sum' name='[sum:injury_claim:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:injury_claim:qk]' scope='rows' value='Injury Claim Amounts' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Heatmap' />
+            <encodings>
+              <lod column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' />
+              <lod column='[federated.0awbdcc1pvqa7914git850g9n4b1].[sum:injury_claim:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:injury_claim:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:injury_claim:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:injury_claim:qk]</rows>
+        <cols>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</cols>
+      </table>
+      <simple-id uuid='{654E9EB9-8863-4FE2-876A-E2C6D2846336}' />
+    </worksheet>
+    <worksheet name='Injury Claims and Fraud Summary'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Injury Claim Summary&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='insurance_claims_cleaned_fixed' name='federated.0awbdcc1pvqa7914git850g9n4b1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0awbdcc1pvqa7914git850g9n4b1'>
+            <column-instance column='[injury_claim]' derivation='Avg' name='[avg:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+            <column caption='Injury Claim' datatype='integer' name='[injury_claim]' role='measure' type='quantitative' />
+            <column-instance column='[injury_claim]' derivation='Max' name='[max:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[injury_claim]' derivation='Median' name='[med:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[injury_claim]' derivation='Min' name='[min:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+            <column-instance aggregation-param='25' column='[injury_claim]' derivation='Percentile' name='[prc25:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column-instance aggregation-param='75' column='[injury_claim]' derivation='Percentile' name='[prc75:injury_claim:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[injury_claim]' derivation='Sum' name='[sum:injury_claim:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[prc25:injury_claim:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[min:injury_claim:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[med:injury_claim:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[prc75:injury_claim:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[avg:injury_claim:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[prc25:injury_claim:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[min:injury_claim:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[med:injury_claim:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[prc75:injury_claim:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[sum:injury_claim:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='15' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</rows>
+        <cols>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</cols>
+        <annotations>
+          <annotation class='point' id='0' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Fraud Reported: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Avg. Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[avg:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Max. Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Median Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[med:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Min. Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[min:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Percentile (25) of Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[prc25:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Percentile (75) of Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[prc75:injury_claim:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields />
+                      <y-fields>
+                        <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[avg:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[med:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[min:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[prc25:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[prc75:injury_claim:qk]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>7179.2297476759632</value>
+                    <value>21450</value>
+                    <value>6620.0</value>
+                    <value>0</value>
+                    <value>&quot;No&quot;</value>
+                    <value>3480.0</value>
+                    <value>11120.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='130' y='-20' />
+          </annotation>
+          <annotation class='point' id='1' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run fontcolor='#787878'>Fraud Reported: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Avg. Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[avg:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Max. Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Median Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[med:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Min. Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[min:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Percentile (25) of Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[prc25:injury_claim:qk]>]]></run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#787878'>Percentile (75) of Injury Claim: </run>
+              <run bold='true'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[prc75:injury_claim:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields />
+                      <y-fields>
+                        <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[avg:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[med:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[min:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[prc25:injury_claim:qk]</field>
+                      <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[prc75:injury_claim:qk]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>8208.3400809716604</value>
+                    <value>20700</value>
+                    <value>7240.0</value>
+                    <value>0</value>
+                    <value>&quot;Yes&quot;</value>
+                    <value>5370.0</value>
+                    <value>11900.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='130' y='-20' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{CE428F57-C80B-4064-A2D2-A4E9A22B15D2}' />
+    </worksheet>
   </worksheets>
   <windows saved-dpi-scale-factor='1.25' source-height='37'>
-    <window class='worksheet' maximized='true' name='Fraud vs Non-Fraud'>
+    <window class='worksheet' name='Fraud vs Non-Fraud'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1653,6 +1890,71 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{3B31EF40-3F44-4FFF-BDF8-525DCF79EC67}' />
+    </window>
+    <window class='worksheet' name='Injury Claims and Fraud'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card size='26' type='pages' />
+            <card size='43' type='filters' />
+            <card size='205' type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:injury_claim:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1C12FF29-9C2D-478C-BB5B-A091D713462C}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Injury Claims and Fraud Summary'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</field>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+            <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:injury_claim:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6593F99F-D816-409D-8539-706A52D22D9F}' />
     </window>
   </windows>
   <thumbnails>
@@ -1868,6 +2170,276 @@
       2Wzbto2ioiKSkpJQKBTk5uaSk5PDl19+iVbr35DSnQlIKJX+ok5vZGtRuYgtdAFOEXMHwFvY
       BpWQToSYHQwkEZ0MSiGdDFUxnSIOxHcJDWohOzPY5dRpNWSk6cjtw57oUGDICNmZ4rI6thaV
       D/i3RzglnJSuGzTPk/4/4XXoRrocdKIAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Injury Claims and Fraud' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Injury Claims and Fraud Summary' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAMa0lEQVR4nO3d61Nb953H8bckEAKBDUjcg23sYIPtENe3prE39jaTTt3dPNqdTf+c/Cl9
+      0pnd7kwzk53J3S1xwhJDsLnYMgbMLSBxkZAEuouj0weZkDjupE4amzjfz+uZzhGH31forXMG
+      aUYe13VdRIzy7vcCRPaTAhDTFICYpgDENAUgpikAMU0BiGkKQEzblwBGb3zI9esfEZmPfa+f
+      i8dWyBZ3GR8ZJrZ4j3srqYf2p1bvM3QrwvCnH/PeB9dZX5nl7Xc+5N7cAu+/+z6733rPLzY3
+      xSe3pwEY/HjwoX3Dw8Pff7AfmetW+N8//oHtYoWbH73F2P0HDA/f/rv3HRocZPcbtx9n/asP
+      Ivxl8AaxeIybN+9+vX32Nkvx/D+5+sfz9n//gc2sw53hD7hxa+Y77/vJ4CCVr264FYY/u/kP
+      j788M8VfP75BdGOFsW8cfykySjS9S9U/sfYfbCOe4NKrv+Xd9z4gNtdIyVtD0Jsnk/XQ3BKg
+      6AQJBR1ia5u0HznCXOQLKlXgSy7i7blASyVHJlUi6nhZuXsTag7w2tVfMfT5NL95/XXc8hHe
+      +tP/EG30U3AqVPvrON1Vw9h8ijPhIh8OjROobyIe+ZTQxX8HYH5hnupKEaqqIdhFIZdl8PpH
+      vNjXwVS0THQ2QqipgdbjF0l+Mc3Vq1ee/APlumTSm8wtrhJdnMMbOEqwuM07b/8ZPw5HL73O
+      0VAAgMX5eao8RQq+WtyaME4uy6eDf2HgzAkmp5aJrSxSF6yl48R5tmNzXLl6lU9Hp/iv379B
+      ZXeDoeU1gtUZ5pbjvNAbIr8d408fTIDf5YDfw8Ar1+hsDPzoI+bLOaYjMzjRZRZrajnobDEf
+      TdJ3uJnNVI7u/nP0tB34ekY3T9lXg6e+k1I2y1+vX+f8mWPcnd1kYW6WhvoAhwcukVie5srV
+      K/z/rQhv/P4NipllRqMbVDkJFmMp+rrryCSW9+cMUC5kGBuP8PLZfu48WKHOH2BjM8GlV6/y
+      xfIm//LyOcZujlBdG8Qt7hBo7MTJbdPe2cXA6X5SiQSOCztrc0SWt6ip8QNQwUNVpczbf36L
+      y9f+g4FzL/Of165y89OPOdjYQHIrzcrMBB19L5FZX6K5rZvT/Sf21pXc3qHvZB/r0SjxRJxE
+      Ik45v8NWOo23vp1fv3qV6aH/oxIIffn7KhUqlQpP8tMkoa4e1qYGqWvvBVziiQTbhV1OdDcS
+      TWSpVPZeE9lOpTl+sp+1tTUS8ThbiTjlcoHkVoo89Vy79hqLkzfIO7V4+PIMs7d2p8DswgqJ
+      1SXiySQ7uRz++lbq/H6efy5MMlt4IvPVHuwkuzpBoLkTt5TnwfIq64vLhLpb+eiTCbpa6h+a
+      cSe1Q//JPlajayQSCRLxOLulHKlUinJVE7/73WtMj35IyVOPB+CbM5bzzC1F2VxZIrG1RSaX
+      w/fmm2+++UQm+w5OBc6cu0hzqJlSJkldQxMtrSG6Orto8Fe4M7vKC6eOkdwu0dHZTrDuAAcb
+      auh9/gjT81G6WptpDoc50H6MoJMi2NRCZ1uYzPoihZoDxDc2KRXzeNxdJqbu8vzJF1mem6Hv
+      zDme6+pidnKUlsMn6GhuoLG1g4APisUiba2thFtaweNlc3ONF3p7WE1kae/spiXUTHtrKzN3
+      Jjn/yr8S9PsYHvqEXHoTpzZEfeDJnEx3HQ8+r5/Tp3uprj1AUzBAKNRMe0sYB5elxRhdHS2U
+      ikVa21ppbmnDg4fERoxfnD7BYixBS1sHrS0tdHZ2MDs+wtlXf0uD30dbUy2jt+9QdzCMv6qG
+      Km+ZA00tdB/upuFAM8FAgKbGIKFwM4H6JuoD1T/6fKXyLsFAgJ7eXnw1QfyVIo2hVvD4uPLS
+      KZZW1oiu79DZ1rw3Y6i1DfCS2NzgTP9RljZStLV3EQ6F6OzsYHrsM371m3+jrtpD+EANn4/f
+      pb6plRp/ACpFGsOtdHd3Ud8YxvNz+jCcu1tkYXWTo4ef+9YOh/mFL+jpOYLH84+Pk46vEk27
+      9B97+Di7+TR35jd48VQvj3GYfZPdWmchnuf08SMPbS8XMkTmVhg4dQLP4zwQP2Hb8SgraYeT
+      x7of2l7KpZle3GDgZO9jHWcvgGw2S7lc/vFXKvIT9rM6A4h8X3ofQExTAGKaAhDTFICYpgDE
+      NAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDE
+      NAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDE
+      NAUgpikAMU0BiGkKQEyr+vaGkcF38bb1k4svcfnyK3g9nv1Y175KJpPcuXOH2tpazp8/D8Dk
+      5CRVVVXkcjnS6TQDAwNEIhFqa2u5cOECnp/h41QqlRgaGqKhoYFz5849EzM6jsPIyAiFQoGz
+      Z89y48YNrl27RlXVl0/10dFRQqEQ6+vruK776BkgtVNmY2WW1dgaX9y/zTvvvc8no1NPfZD9
+      dPDgQerq6nAcB4B0Ok02m6VQKJDL5fB6vSwvL3P48GG8Xu/e/X5u1tbWOHHiBK7rUqlU9ns5
+      j8Xr9e69IHm9XsLhMK7rArC5uYnjOGSzWTKZDI7j/J1LII+X/p5WIvNrPJid5+ylq0QXZp72
+      HPvKcRz6+vpIpVK4rsv8/DyZTIaZmRl2d3fp7e0lnU5TLBYpl8vPxCvjD+Hz+SgUCs/UjK7r
+      MjQ0xIULF2hoaMDr/fopvrCwQCqVYmFhgcuXL3Po0KFHL4GOHT9O99GjvPyLDX75yzOM3Rrm
+      pVd+/VSH2G/b29vcu3ePnp4exsfHOXPmDOVymUQiwfb2NouLi1y8eJH79+8TCoXw+Xz7veQn
+      oqOjg7GxMVpbWx96Iv2UlUolHMdhamqK7u5uUqkU09PTlMtlLl68SKFQIJ1OMzc3RyaTweN+
+      dX6QR7iui+M4e9eP8mz6rr+jAhDTno3zmsgTogDENAUgpikAMU0BiGkKQExTAGKaAhDTFICY
+      pgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICY
+      pgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDT9r46
+      u1KpoO/MFmv2AiiXyziOs59rEXnqdAkkpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikA
+      MU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikA
+      MU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpn0r
+      AJeVlVVct0I0uoa7P2vad6VSiZGRER48eABAPp9ndHSUVCrF5OQkw8PDJJNJ5ufn2dzc3OfV
+      Pjmu6zI3N0cikdjvpTw213VZWlpidnYW13WZmJigUCgAsLy8zPDwMAsLC2xtbTEzM/PtADys
+      zU3w+dgYy4kc89OTTEbmSMSW+WzkFvmysw8jPX2xWIxAIEB3dzcAlUqFU6dOMT4+zsDAAE1N
+      TSSTSTKZDPfv36dSqezzip+MeDxOqVQiEok8MzNWKhX8fj/JZJKbN2/S2dnJ7du3ATh06BAD
+      AwOk02kikQiu6z56CXT20hU+H73N2eMHefeDz4jcnWR2ZpadfB6nYuOc0NbWRkNDA0NDQwAE
+      AgHGx8cJBoNUKhXS6TS1tbU0NzdTX1//zDw5vq98Pk84HH6mZvT5fGxvbxMMBqmuriYUClFd
+      Xb23PxKJ0N/fTzAYpKWl5dEAvFUBug89h9/fQFsoyOGjx2jv6qCwucxaMv9Uh9kvOzs7RKNR
+      ampqiMVirK+v47ouxWKRlZUVjhw5QlNTE9PT02xvb+Pz+fZ7yU9EOBxmcnKSbDb7zMyYy+WY
+      mJggl8sRCoUYHBwkEAgQjUYpFArU1NTg9/vJ5/PcunULj+u6LkCxWMRxbFziPC7XdVlbW6O9
+      vR2Px7Pfy5Ef6Ku/Y0dHxyP7FICYpn+DimkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkK
+      QExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkK
+      QExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMe1vVvLm
+      ftg8wFQAAAAASUVORK5CYII=
     </thumbnail>
   </thumbnails>
 </workbook>
