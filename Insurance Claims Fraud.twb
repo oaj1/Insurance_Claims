@@ -3,13 +3,16 @@
 <!-- build 20243.25.0114.1153                               -->
 <workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
     <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
     <Heatmap />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
     <ObjectModelExtractV2 />
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <SortTagCleanup />
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
@@ -724,6 +727,12 @@
       <column caption='Vehicle Claim' datatype='integer' name='[vehicle_claim]' role='measure' type='quantitative' />
       <column caption='Witnesses' datatype='integer' name='[witnesses]' role='measure' type='quantitative' />
       <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+      <column-instance column='[policy_number]' derivation='Count' name='[pcto:cnt:policy_number:qk:3]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[policy_number]' derivation='CountD' name='[pcto:ctd:policy_number:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
         <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/ollie/AppData/Local/Temp/TableauTemp/#TableauTemp_0ff1x210tj12y116wet7l0nxpecq.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='09/12/2025 02:58:23 PM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
@@ -1368,6 +1377,17 @@
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:policy_number:qk:3]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:ctd:policy_number:qk:1]&quot;</bucket>
+            </map>
+          </encoding>
           <encoding attr='color' field='[none:fraud_reported:nk]' type='palette'>
             <map to='#4e79a7'>
               <bucket>&quot;No&quot;</bucket>
@@ -1816,6 +1836,114 @@
       <simple-id uuid='{CE428F57-C80B-4064-A2D2-A4E9A22B15D2}' />
     </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Fraud By The Numbers'>
+      <style />
+      <size maxheight='860' maxwidth='650' minheight='560' minwidth='420' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='7' param='horz' type-v2='layout-flow' w='97538' x='1231' y='998'>
+            <zone h='98004' id='5' type-v2='layout-basic' w='72923' x='1231' y='998'>
+              <zone h='49002' id='3' name='Fraud vs Non-Fraud' w='72923' x='1231' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49002' id='9' name='Fraud vs Non-Fraud Continued' w='72923' x='1231' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98004' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='24615' x='74154' y='998'>
+              <zone h='11597' id='8' name='Fraud vs Non-Fraud' pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' type-v2='color' w='24615' x='74154' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='6360' id='10' name='Fraud vs Non-Fraud Continued' pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:policy_number:qk:3]' type-v2='size' w='24615' x='74154' y='12595'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='12' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='11' param='vert' type-v2='layout-flow' w='97538' x='1231' y='998'>
+                <zone fixed-size='280' h='49002' id='3' is-fixed='true' name='Fraud vs Non-Fraud' w='72923' x='1231' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11597' id='8' name='Fraud vs Non-Fraud' pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]' type-v2='color' w='24615' x='74154' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49002' id='9' is-fixed='true' name='Fraud vs Non-Fraud Continued' w='72923' x='1231' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6360' id='10' name='Fraud vs Non-Fraud Continued' pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:policy_number:qk:3]' type-v2='size' w='24615' x='74154' y='12595'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{EECD809C-2830-4D27-8ACF-02F1E506E35A}' />
+    </dashboard>
+  </dashboards>
   <windows saved-dpi-scale-factor='1.25' source-height='37'>
     <window class='worksheet' name='Fraud vs Non-Fraud'>
       <cards>
@@ -1895,9 +2023,9 @@
       <cards>
         <edge name='left'>
           <strip size='160'>
-            <card size='26' type='pages' />
-            <card size='43' type='filters' />
-            <card size='205' type='marks' />
+            <card size='20' type='pages' />
+            <card size='34' type='filters' />
+            <card size='164' type='marks' />
           </strip>
         </edge>
         <edge name='top'>
@@ -1945,7 +2073,7 @@
         </edge>
       </cards>
       <viewpoint>
-        <zoom type='entire-view' />
+        <zoom type='fit-width' />
         <highlight>
           <color-one-way>
             <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</field>
@@ -1956,8 +2084,189 @@
       </viewpoint>
       <simple-id uuid='{6593F99F-D816-409D-8539-706A52D22D9F}' />
     </window>
+    <window class='dashboard' name='Fraud By The Numbers'>
+      <viewpoints>
+        <viewpoint name='Fraud vs Non-Fraud'>
+          <highlight>
+            <color-one-way>
+              <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Fraud vs Non-Fraud Continued' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5CE10E02-B613-4977-A7A5-9325522A5FDA}' />
+    </window>
   </windows>
   <thumbnails>
+    <thumbnail height='192' name='Fraud By The Numbers' width='192'>
+      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
+      wjomSZL0/wGSXQaLs1hImgAAAABJRU5ErkJggg==
+    </thumbnail>
     <thumbnail height='87' name='Fraud vs Non-Fraud' width='164'>
       iVBORw0KGgoAAAANSUhEUgAAAKQAAABXCAYAAACKs+72AAAACXBIWXMAABJ0AAASdAHeZh94
       AAAQn0lEQVR4nO2deVyU1f7H388zMOgAmoAi4VKY+5Y4dl0SXwZZXde0BMU09Zpby20xr3nN
@@ -2378,68 +2687,57 @@
       E7TKbIGPHtP+RQNHPXi+Rnc7GkgZCu8le6qzjyltT0icsXLz/j/B5ScQhKKXrgAAAABJRU5E
       rkJggg==
     </thumbnail>
-    <thumbnail height='192' name='Injury Claims and Fraud Summary' width='192'>
-      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
-      ftg8wFQAAAAASUVORK5CYII=
+    <thumbnail height='86' name='Injury Claims and Fraud Summary' width='192'>
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
