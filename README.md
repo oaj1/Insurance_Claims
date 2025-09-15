@@ -39,7 +39,7 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 - As data cleaning and visualization occurs, dynamically create intuitative visualizations.
 - Build interactive dashboards to visually explain fraud risk factors.
 - Use Tableau for communicating findings to non-technical stakeholders.
-- See the below linke to for Tableau Public (still in progress)
+- See the below link to for Tableau Public (still in progress)
 **Note:** I will use Tableau for visualization and story telling, Python for more advanced statistics and analysis.  
 
 ---
