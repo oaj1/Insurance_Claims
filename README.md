@@ -26,7 +26,7 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 
 ### 🔹 Python
 - Summary statistics and fraud distribution.
-- EDA and Visualizations:
+- EDA and Visualizations (High-Priority Predictors):
   - Fraud vs. non-fraud distributions (boxplots, histograms).
   - Incident Type EDA.
   - Demographic and financial EDA.
