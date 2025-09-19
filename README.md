@@ -27,20 +27,18 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 ### 🔹 Python
 - Summary statistics and fraud distribution.
 - EDA and Visualizations (High-Priority Predictors):
-  - Fraud vs. non-fraud distributions (boxplots, histograms).
-  - Incident Characteristics EDA.
-  - Claim Circumstances and Amounts EDA.
+  - Fraud vs. non-fraud distributions (Initial EDA).
+  - Incident Type EDA.
+  - Demographics and Financials EDA.
   - Complexity factors EDA.
-  - Financial Incentives EDA
-  - Tempo
+  - Claim Type Amount EDA
+  - Claim Circumstances
 - Multivariate analysis (correlation heatmaps, feature interactions).
 
 ### 🔹 Tableau
 - As data cleaning and visualization occurs, dynamically create intuitative visualizations.
 - Build interactive dashboards to visually explain fraud risk factors.
-- Use Tableau for communicating findings to non-technical stakeholders.
-- See the below link to for Tableau Public (still in progress)
-**Note:** I will use Tableau for visualization and story telling, Python for more advanced statistics and analysis.  
+- Story will include, Fraud by Numbers, Insurance Claim Amounts by Type of Claims (injury, vehicle, property), 
 
 ---
 
