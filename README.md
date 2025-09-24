@@ -28,11 +28,11 @@ data cleaning, exploratory analysis (Python + Tableau), and machine learning mod
 - Summary statistics and fraud distribution.
 - EDA and Visualizations (High-Priority Predictors):
   - Fraud vs. non-fraud distributions (Initial EDA).
-  - Incident Type EDA.
+  - Claim Characteristics EDA.
   - Demographics and Financials EDA.
   - Complexity factors EDA.
   - Claim Type Amount EDA
-  - Claim Circumstances
+  - Claim Circumstances (/)
 - Multivariate analysis (correlation heatmaps, feature interactions).
 
 ### 🔹 Tableau
