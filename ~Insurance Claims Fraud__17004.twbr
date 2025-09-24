@@ -16,7 +16,6 @@
     <SortTagCleanup />
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
-    <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
   <repository-location derived-from='https://public.tableau.com/workbooks/InsuranceClaimsFraud?rev=1.1' id='InsuranceClaimsFraud' path='/workbooks' revision='1.1' />
   <preferences>
@@ -728,7 +727,14 @@
       <column caption='Witnesses' datatype='integer' name='[witnesses]' role='measure' type='quantitative' />
       <column-instance column='[fraud_reported]' derivation='Attribute' name='[attr:fraud_reported:nk]' pivot='key' type='nominal' />
       <column-instance column='[fraud_reported]' derivation='Count' name='[cnt:fraud_reported:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[fraud_reported]' derivation='CountD' name='[ctd:fraud_reported:qk]' pivot='key' type='quantitative' />
       <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+      <column-instance column='[fraud_reported]' derivation='Count' name='[pcrk:cnt:fraud_reported:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[police_report_available]' ordering-type='Field' rank-options='Competition,Ascending' type='PctRank' />
+      </column-instance>
+      <column-instance column='[fraud_reported]' derivation='Count' name='[pcrk:cnt:fraud_reported:qk:3]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[fraud_reported]' ordering-type='Field' rank-options='Competition,Ascending' type='PctRank' />
+      </column-instance>
       <column-instance column='[fraud_reported]' derivation='Count' name='[pcrk:cnt:fraud_reported:qk]' pivot='key' type='quantitative'>
         <table-calc ordering-type='Rows' rank-options='Competition,Ascending' type='PctRank' />
       </column-instance>
@@ -738,11 +744,17 @@
       <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:2]' pivot='key' type='quantitative'>
         <table-calc ordering-type='Columns' type='PctTotal' />
       </column-instance>
+      <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:3]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[police_report_available]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
       <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:4]' pivot='key' type='quantitative'>
         <table-calc ordering-type='Table' type='PctTotal' />
       </column-instance>
       <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:5]' pivot='key' type='quantitative'>
         <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[authorities_contacted]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:7]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[property_damage]' ordering-type='Field' type='PctTotal' />
       </column-instance>
       <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk]' pivot='key' type='quantitative'>
         <table-calc ordering-type='Rows' type='PctTotal' />
@@ -1405,7 +1417,16 @@
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[ctd:fraud_reported:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcrk:cnt:fraud_reported:qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcrk:cnt:fraud_reported:qk:3]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcrk:cnt:fraud_reported:qk]&quot;</bucket>
@@ -1417,10 +1438,16 @@
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:2]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:3]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:4]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:5]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:7]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk]&quot;</bucket>
@@ -1521,7 +1548,7 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Claim Characteristics'>
+    <worksheet name='Fraud By Authorities Contacted'>
       <layout-options>
         <title>
           <formatted-text>
@@ -1560,11 +1587,9 @@
             </encodings>
             <customized-label>
               <formatted-text>
-                <run>&lt;</run>
-                <run>[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:5]</run>
-                <run>&gt;&#10;&lt;</run>
-                <run>[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]</run>
-                <run>&gt; Count</run>
+                <run><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:5]>
+]]></run>
+                <run fontsize='8'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]> Counts]]></run>
               </formatted-text>
             </customized-label>
             <style>
@@ -1584,6 +1609,106 @@
         </table-calculations>
       </table>
       <simple-id uuid='{7F8F39EB-9D56-462C-A40B-2072FC37C46D}' />
+    </worksheet>
+    <worksheet name='Fraud By Police Report Available'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='insurance_claims_cleaned_fixed' name='federated.0awbdcc1pvqa7914git850g9n4b1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0awbdcc1pvqa7914git850g9n4b1'>
+            <column-instance column='[fraud_reported]' derivation='Count' name='[cnt:fraud_reported:qk]' pivot='key' type='quantitative' />
+            <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+            <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+            <column-instance column='[police_report_available]' derivation='None' name='[none:police_report_available:nk]' pivot='key' type='nominal' />
+            <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[police_report_available]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column caption='Police Report Available' datatype='string' name='[police_report_available]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:police_report_available:nk]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:3]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:3]>
+]]></run>
+                <run fontsize='8'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]> Counts]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]</rows>
+        <cols>([federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk] / [federated.0awbdcc1pvqa7914git850g9n4b1].[none:police_report_available:nk])</cols>
+      </table>
+      <simple-id uuid='{AF8777BC-8E0E-4D0D-9915-A3622E1FABC4}' />
+    </worksheet>
+    <worksheet name='Fraud By Property Damage'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='insurance_claims_cleaned_fixed' name='federated.0awbdcc1pvqa7914git850g9n4b1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0awbdcc1pvqa7914git850g9n4b1'>
+            <column-instance column='[fraud_reported]' derivation='Count' name='[cnt:fraud_reported:qk]' pivot='key' type='quantitative' />
+            <column caption='Fraud Reported' datatype='string' name='[fraud_reported]' role='dimension' type='nominal' />
+            <column-instance column='[fraud_reported]' derivation='None' name='[none:fraud_reported:nk]' pivot='key' type='nominal' />
+            <column-instance column='[property_damage]' derivation='None' name='[none:property_damage:nk]' pivot='key' type='nominal' />
+            <column-instance column='[fraud_reported]' derivation='Count' name='[pcto:cnt:fraud_reported:qk:7]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0awbdcc1pvqa7914git850g9n4b1].[property_damage]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column caption='Property Damage' datatype='string' name='[property_damage]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:property_damage:nk]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]' />
+              <text column='[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:7]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[pcto:cnt:fraud_reported:qk:7]>
+]]></run>
+                <run fontsize='8'><![CDATA[<[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]> Counts]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0awbdcc1pvqa7914git850g9n4b1].[cnt:fraud_reported:qk]</rows>
+        <cols>([federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk] / [federated.0awbdcc1pvqa7914git850g9n4b1].[none:property_damage:nk])</cols>
+      </table>
+      <simple-id uuid='{D2793BF6-3EAB-496F-AD72-EBC6257FE370}' />
     </worksheet>
     <worksheet name='Fraud by Property Claim Summary'>
       <repository-location derived-from='https://public.tableau.com/workbooks/InsuranceClaimsFraud/FraudbyPropertyClaimSummary?rev=' id='121196390' path='/workbooks/InsuranceClaimsFraud' revision='' />
@@ -2375,8 +2500,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='750' minheight='750' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='28' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='27' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='33' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='49070' id='3' is-fixed='true' name='Fraud vs Non-Fraud' w='72923' x='1231' y='930'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2473,8 +2598,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98004' id='16' param='vert' type-v2='layout-flow' w='97538' x='1231' y='998'>
+            <zone h='100000' id='23' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='22' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='49002' id='3' is-fixed='true' name='Injury Claims and Fraud' w='72923' x='1231' y='998'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2562,8 +2687,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='16' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='23' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='22' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='49002' id='3' is-fixed='true' name='Property Claim and Fraud' w='72923' x='1231' y='998'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2612,7 +2737,11 @@
           </formatted-text>
         </title>
       </layout-options>
-      <style />
+      <style>
+        <style-rule element='story-description'>
+          <format attr='text-align' id='story-description_7' value='right' />
+        </style-rule>
+      </style>
       <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
       <zones>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
@@ -2620,12 +2749,44 @@
             <zone h='4357' id='3' type-v2='title' w='98426' x='787' y='830' />
             <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='5187' />
             <zone h='83506' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='15664'>
-              <flipboard active-id='4' nav-type='caption' show-nav-arrows='true'>
+              <flipboard active-id='5' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
                   <story-point caption='Insurance Claims Fraud EDA' captured-sheet='Fraud By The Numbers Dashboard' id='1' />
                   <story-point caption='Fraud By Vehicle Claim' captured-sheet='Vehicle Claim Dashboard' id='2' />
-                  <story-point caption='Fraud By Injury Claim' captured-sheet='Injury Claim Dashboard' id='3' />
+                  <story-point caption='Fraud By Injury Claim' captured-sheet='Injury Claim Dashboard' id='3'>
+                    <capturedDeltas>
+                      <worksheet name='Injury Claims and Fraud Summary'>
+                        <selection-collection>
+                          <tuple-selection>
+                            <tuple-reference>
+                              <tuple-descriptor>
+                                <pane-descriptor>
+                                  <x-fields>
+                                    <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</field>
+                                  </x-fields>
+                                  <y-fields>
+                                    <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+                                  </y-fields>
+                                </pane-descriptor>
+                                <columns>
+                                  <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[none:fraud_reported:nk]</field>
+                                  <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[:Measure Names]</field>
+                                  <field>[federated.0awbdcc1pvqa7914git850g9n4b1].[Multiple Values]</field>
+                                </columns>
+                              </tuple-descriptor>
+                              <tuple>
+                                <value>&quot;No&quot;</value>
+                                <value>&quot;[federated.0awbdcc1pvqa7914git850g9n4b1].[max:injury_claim:qk]&quot;</value>
+                                <value>21450.0</value>
+                              </tuple>
+                            </tuple-reference>
+                          </tuple-selection>
+                        </selection-collection>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
                   <story-point caption='Fraud By Property Claim' captured-sheet='Property Claim Dashboard' id='4' />
+                  <story-point caption='Fraud By Authorities Contacted' captured-sheet='Fraud By Authorities Contacted' id='5' />
                 </story-points>
               </flipboard>
             </zone>
@@ -2636,32 +2797,6 @@
             <format attr='border-width' value='0' />
             <format attr='margin' value='8' />
           </zone-style>
-        </zone>
-        <zone flipboard-zone-id='5' h='20539' hidden='true' id='6' story-point-id='1' type-v2='text' w='64469' x='33858' y='35477'>
-          <formatted-text>
-            <run>Overview of Data by the Numbers</run>
-          </formatted-text>
-        </zone>
-        <zone flipboard-zone-id='5' h='53942' hidden='true' id='7' story-point-id='2' type-v2='text' w='52756' x='48720' y='29357'>
-          <formatted-text>
-            <run fontalignment='0' fontcolor='#292929' fontname='Consolas' fontsize='13'>Fraud cases are more tightly clustered around mid-claims (30K–55K), while non-fraud spans a much wider range.</run>
-            <run fontalignment='0'>Æ&#10;&#10;</run>
-            <run fontalignment='0' fontcolor='#292929' fontname='Consolas' fontsize='13'>The amount of the vehicle claim alone is not a definitive predictor of fraud. While the statistics show that fraudulent claims tend to be higher and more tightly clustered in the mid-to-high range, there is significant overlap between fraud and non-fraud claim amounts. </run>
-          </formatted-text>
-        </zone>
-        <zone flipboard-zone-id='5' h='53631' hidden='true' id='8' story-point-id='3' type-v2='text' w='44882' x='53346' y='27282'>
-          <formatted-text>
-            <run fontalignment='0' fontcolor='#292929' fontname='Consolas' fontsize='13'>Just like with vehicle claims, fraudsters aim for moderately high, not extreme, amounts → enough to get paid but not so much it looks suspicious.</run>
-            <run fontalignment='0'>Æ&#10;</run>
-            <run fontalignment='0' fontcolor='#292929' fontname='Consolas' fontsize='13'>Æ&#10;</run>
-            <run fontalignment='0'>Æ&#10;</run>
-            <run fontalignment='0' fontcolor='#292929' fontname='Consolas' fontsize='13'>Injury claims in fraud cases rarely drop to the very small payouts that you see in genuine claims.</run>
-          </formatted-text>
-        </zone>
-        <zone flipboard-zone-id='5' h='45643' id='9' story-point-id='4' type-v2='text' w='36713' x='62402' y='36307'>
-          <formatted-text>
-            <run fontalignment='0' fontcolor='#292929' fontname='Consolas' fontsize='13'>In summary: Fraudulent property claims are higher on average and more concentrated in the mid-range, while non-fraud claims are more varied and include more small payouts. This supports the idea that claim amount is correlated with fraud, but not a perfect predictor on its own</run>
-          </formatted-text>
         </zone>
       </zones>
       <simple-id uuid='{F39C02E8-A0E3-4143-A2AF-6DA75D89FEF3}' />
@@ -2713,8 +2848,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='16' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='23' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='22' param='vert' type-v2='layout-flow' w='97538' x='1231' y='998'>
                 <zone fixed-size='280' h='49002' id='3' is-fixed='true' name='Fraud by Total Claim Amount' w='72923' x='1231' y='998'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2802,8 +2937,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='16' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='23' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='22' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='49002' id='3' is-fixed='true' name='Fraud by Vehicle Claim' w='72923' x='1231' y='998'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2846,36 +2981,6 @@
     </dashboard>
   </dashboards>
   <windows source-height='37'>
-    <window class='dashboard' name='Injury Claim Dashboard'>
-      <viewpoints>
-        <viewpoint name='Injury Claims and Fraud'>
-          <zoom type='entire-view' />
-        </viewpoint>
-        <viewpoint name='Injury Claims and Fraud Summary' />
-      </viewpoints>
-      <active id='-1' />
-      <simple-id uuid='{E81B192C-FBBD-42D4-A51F-E701C0ED93C0}' />
-    </window>
-    <window class='dashboard' name='Property Claim Dashboard'>
-      <viewpoints>
-        <viewpoint name='Fraud by Property Claim Summary' />
-        <viewpoint name='Property Claim and Fraud'>
-          <zoom type='entire-view' />
-        </viewpoint>
-      </viewpoints>
-      <active id='-1' />
-      <simple-id uuid='{994D102C-4143-44BA-851C-84C9A4A10ACC}' />
-    </window>
-    <window class='dashboard' name='Vehicle Claim Dashboard'>
-      <viewpoints>
-        <viewpoint name='Fraud by Vehicle Claim'>
-          <zoom type='entire-view' />
-        </viewpoint>
-        <viewpoint name='Fraud by Vehicle Claim Summary' />
-      </viewpoints>
-      <active id='-1' />
-      <simple-id uuid='{AB96BA1C-F64F-4B7A-ACC1-2A3E322E7695}' />
-    </window>
     <window class='dashboard' name='Total Claim Dashboard'>
       <viewpoints>
         <viewpoint name='Fraud by Total Claim Amount'>
@@ -2886,12 +2991,12 @@
       <active id='-1' />
       <simple-id uuid='{5BE520D8-5ABA-40BF-ACD0-7134AE304F80}' />
     </window>
-    <window class='dashboard' name='Story'>
+    <window class='dashboard' maximized='true' name='Story'>
       <viewpoints />
-      <active id='-1' />
+      <active id='4' />
       <simple-id uuid='{80CD8F53-11A0-4759-8F88-1125AB7FCC4F}' />
     </window>
-    <window class='worksheet' maximized='true' name='Claim Characteristics'>
+    <window class='worksheet' name='Fraud By Authorities Contacted'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2917,7 +3022,72 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
       <simple-id uuid='{FE4646DE-7DDA-47FD-90A1-DB972D624DB9}' />
+    </window>
+    <window class='worksheet' name='Fraud By Police Report Available'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:police_report_available:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{AB715E09-0C4F-414A-ADC2-24904897D759}' />
+    </window>
+    <window class='worksheet' name='Fraud By Property Damage'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0awbdcc1pvqa7914git850g9n4b1].[none:property_damage:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{0EFCD86E-39B9-4B34-A3B3-E0105B91206D}' />
     </window>
     <window class='dashboard' hidden='true' name='Fraud By The Numbers Dashboard'>
       <viewpoints>
@@ -3113,6 +3283,16 @@
       </cards>
       <simple-id uuid='{3B31EF40-3F44-4FFF-BDF8-525DCF79EC67}' />
     </window>
+    <window class='dashboard' hidden='true' name='Injury Claim Dashboard'>
+      <viewpoints>
+        <viewpoint name='Injury Claims and Fraud'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Injury Claims and Fraud Summary' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E81B192C-FBBD-42D4-A51F-E701C0ED93C0}' />
+    </window>
     <window class='worksheet' hidden='true' name='Injury Claims and Fraud'>
       <cards>
         <edge name='left'>
@@ -3165,6 +3345,16 @@
       </cards>
       <simple-id uuid='{6593F99F-D816-409D-8539-706A52D22D9F}' />
     </window>
+    <window class='dashboard' hidden='true' name='Property Claim Dashboard'>
+      <viewpoints>
+        <viewpoint name='Fraud by Property Claim Summary' />
+        <viewpoint name='Property Claim and Fraud'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{994D102C-4143-44BA-851C-84C9A4A10ACC}' />
+    </window>
     <window class='worksheet' hidden='true' name='Property Claim and Fraud'>
       <cards>
         <edge name='left'>
@@ -3192,6 +3382,16 @@
         </edge>
       </cards>
       <simple-id uuid='{217015A4-50A5-4528-9102-04FB380DB408}' />
+    </window>
+    <window class='dashboard' hidden='true' name='Vehicle Claim Dashboard'>
+      <viewpoints>
+        <viewpoint name='Fraud by Vehicle Claim'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Fraud by Vehicle Claim Summary' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{AB96BA1C-F64F-4B7A-ACC1-2A3E322E7695}' />
     </window>
   </windows>
 </workbook>
