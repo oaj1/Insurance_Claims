@@ -2749,7 +2749,7 @@
             <zone h='4357' id='3' type-v2='title' w='98426' x='787' y='830' />
             <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='5187' />
             <zone h='83506' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='15664'>
-              <flipboard active-id='5' nav-type='caption' show-nav-arrows='true'>
+              <flipboard active-id='7' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
                   <story-point caption='Insurance Claims Fraud EDA' captured-sheet='Fraud By The Numbers Dashboard' id='1' />
                   <story-point caption='Fraud By Vehicle Claim' captured-sheet='Vehicle Claim Dashboard' id='2' />
@@ -2787,6 +2787,8 @@
                   </story-point>
                   <story-point caption='Fraud By Property Claim' captured-sheet='Property Claim Dashboard' id='4' />
                   <story-point caption='Fraud By Authorities Contacted' captured-sheet='Fraud By Authorities Contacted' id='5' />
+                  <story-point caption='Fraud By Police Report' captured-sheet='Fraud By Police Report Available' id='6' />
+                  <story-point caption='Fraud By Property Damage' captured-sheet='Fraud By Property Damage' id='7' />
                 </story-points>
               </flipboard>
             </zone>
@@ -2991,10 +2993,18 @@
       <active id='-1' />
       <simple-id uuid='{5BE520D8-5ABA-40BF-ACD0-7134AE304F80}' />
     </window>
-    <window class='dashboard' maximized='true' name='Story'>
+    <window class='dashboard' name='Story'>
       <viewpoints />
-      <active id='4' />
+      <active id='-1' />
       <simple-id uuid='{80CD8F53-11A0-4759-8F88-1125AB7FCC4F}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Fraud By The Numbers Dashboard'>
+      <viewpoints>
+        <viewpoint name='Fraud vs Non-Fraud' />
+        <viewpoint name='Fraud vs Non-Fraud Continued' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5CE10E02-B613-4977-A7A5-9325522A5FDA}' />
     </window>
     <window class='worksheet' name='Fraud By Authorities Contacted'>
       <cards>
@@ -3088,14 +3098,6 @@
         <zoom type='fit-width' />
       </viewpoint>
       <simple-id uuid='{0EFCD86E-39B9-4B34-A3B3-E0105B91206D}' />
-    </window>
-    <window class='dashboard' hidden='true' name='Fraud By The Numbers Dashboard'>
-      <viewpoints>
-        <viewpoint name='Fraud vs Non-Fraud' />
-        <viewpoint name='Fraud vs Non-Fraud Continued' />
-      </viewpoints>
-      <active id='-1' />
-      <simple-id uuid='{5CE10E02-B613-4977-A7A5-9325522A5FDA}' />
     </window>
     <window class='worksheet' hidden='true' name='Fraud by Property Claim Summary'>
       <cards>
