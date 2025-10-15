@@ -1,59 +1,56 @@
-# Insurance_Claims (in progress)
+# 🧾 Insurance_Claims (In Progress)
 
-This project explores an insurance claims dataset to identify patterns of fraud through  
-data cleaning, exploratory analysis (Python + Tableau), and machine learning models.  
+This project analyzes an **insurance claims dataset** to uncover potential fraud patterns through structured **data cleaning**, **exploratory data analysis (EDA)**, and **interactive Tableau dashboards**.
 
 **Dataset:** [Mendeley Insurance Fraud Data](https://data.mendeley.com/datasets/992mh7dk9y/2)
 
 ---
 
-## 1. Insurance_Claims_Load_Cleaning
-**Scope:**
-- Load the initial CSV dataset. ('Insurance_Claims_Load_Clean.ipynb')
-- Inspect data types, missing values, and distributions.
-- Apply data cleaning techniques:
-  - Handle missing values
-  - Remove/adjust outliers
-  - Look at skewed data, decide next steps for analysis (look for heavy right or left tails)
-  - Drop any unecessary data
-  - Save a clean dataset (`insurance_claims_cleaned_fixed.csv`).
+## 🧹 1. Insurance_Claims_Load_Cleaning
+
+**Scope**
+- Load and inspect the raw dataset (`Insurance_Claims_Load_Clean.ipynb`).
+- Assess data types, missing values, and distributions.
+- Apply cleaning techniques:
+  - Handle missing or inconsistent values.
+  - Detect and adjust outliers.
+  - Review skewed variables for potential transformation.
+  - Drop redundant or irrelevant features.
+- Export a refined dataset for analysis (`insurance_claims_cleaned_fixed.csv`).
 
 ---
 
-## 2. Insurance_Claims_EDA
-**Scope:**
-- Conduct exploratory analysis in **Python** and **Tableau**.
+## 📊 2. Insurance_Claims_EDA
+
+**Scope**
+Perform exploratory data analysis (EDA) using **Python** and **Tableau** to identify key fraud indicators and claim behavior patterns.
 
 ### 🔹 Python
-- Summary statistics and fraud distribution.
-- EDA and Visualizations (High-Priority Predictors):
-  - Fraud vs. non-fraud distributions (Initial EDA).
-  - Claim Characteristics EDA.
-  - Demographics and Financials EDA.
-  - Complexity factors EDA.
-  - Claim Type Amount EDA
-  - Claim Circumstances (/)
-- Multivariate analysis (correlation heatmaps, feature interactions).
+- Compute summary statistics and fraud distribution overview.
+- Conduct visual EDA across major categories:
+  - **Fraud vs. Non-Fraud:** overall distribution and imbalance checks.
+  - **Claim Characteristics:** amount, type, and duration analysis.
+  - **Demographics & Financials:** income, occupation, education levels.
+  - **Complexity Factors:** number of vehicles, witnesses, and claim context.
+- Perform multivariate analysis (correlation heatmaps, cross-feature trends).
 
 ### 🔹 Tableau
-- As data cleaning and visualization occurs, dynamically create intuitative visualizations.
-- Build interactive dashboards to visually explain fraud risk factors.
-- Story will include, Fraud by Numbers, Insurance Claim Amounts by Type of Claims (injury, vehicle, property), 
+- Build intuitive dashboards to visualize fraud-related trends.
+- Example dashboard themes:
+  - *Fraud by the Numbers*
+  - *Claim Amounts by Type (Injury, Vehicle, Property)*
+  - *Demographics and Fraud Likelihood*
+- Maintain dynamic updates as new data insights emerge.
 
 ---
 
-## 3. Insurance_Claims_MachineLearning
-**Scope:**
-- Use cleaned dataset from EDA.
-- Feature engineering:.
-- Model development:
-- Model evaluation:
-  - i.e., Confusion matrix, ROC, Precision/Recall, F1-score.
-- Goal: Predict likelihood of fraud with interpretable and accurate models.
+## ✅ Notes
+- Keep EDA modular with separate notebooks for demographics, claims, and financials.
+- Use this README as a central roadmap and evolving documentation of findings.
+- Continue iterating on Tableau dashboards alongside Python-based analysis.
 
 ---
 
-## ✅ Note
-- Keep EDA modular (separate notebooks for demographics, claims, financials, etc.).
-- Maintain a central README (this file) as a project roadmap and log of key findings.
-- Iteratively update Tableau dashboards as new patterns emerge.
+📦 **Project Status:** Active – EDA and Tableau dashboard development in progress  
+🧠 **Focus Areas:** Data cleaning, fraud pattern detection, visualization design  
+🛠️ **Tools:** Python (Pandas, Matplotlib, Seaborn), Tableau  
