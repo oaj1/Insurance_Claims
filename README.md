@@ -1,4 +1,4 @@
-# 🧾 Insurance_Claims (In Progress)
+# 🧾 Insurance_Claims 
 
 This project analyzes an **insurance claims dataset** to uncover potential fraud patterns through structured **data cleaning**, **exploratory data analysis (EDA)**, and **interactive Tableau dashboards**.
 
